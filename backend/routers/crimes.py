@@ -20,7 +20,7 @@ from backend.models import CrimeDetail, CrimeList
 router = APIRouter(prefix="/api/crimes", tags=["crimes"])
 
 
-@router.get("/{ward_code}", response_model=CrimeList)
+@router.get("/{ward_code:path}", response_model=CrimeList)
 def get_ward_crimes(
     ward_code: str,
     time_of_day: Optional[str] = Query(
